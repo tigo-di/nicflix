@@ -1,0 +1,17 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "roteiro",
+      "description": "cursos de roteiro",
+      "color": "#cbd1ff"
+    },
+    {
+      "id": 2,
+      "name": "fotografia",
+      "description": "cursos de fotografia",
+      "color": "#213990"
+    }
+
+  ]
+}
