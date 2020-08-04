@@ -49,7 +49,7 @@ export default function CadastroCategoria() {
         ? 'http://localhost:8080/categories'
         : 'https://nicflix.herokuapp.com/categories';
 
-      fetch(BACKEND) // returns promisse
+      fetch(BACKEND, { mode: 'cors' }) // returns promisse
         .then(async (serverResponse) => {
           if (serverResponse.ok) {
             const response = await serverResponse.json();
