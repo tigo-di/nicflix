@@ -45,18 +45,19 @@ export default function CadastroCategoria() {
 
   useEffect(
     () => {
-      if (window.location.href.includes('localhost')) {
-        const URL = 'http://localhost:8080/categories';
-        fetch(URL) // returns promisse
-          .then(async (serverResponse) => {
-            if (serverResponse.ok) {
-              const response = await serverResponse.json();
-              setCategories([...response]);
-              return;
-            }
-            throw new Error('Não foi possível pegar os dados');
-          });
-      }
+      const BACKEND = window.location.hostname.includes('localhost')
+        ? 'http://localhost:8080/categories'
+        : 'https://nicflix.herokuapp.com/categories';
+
+      fetch(BACKEND) // returns promisse
+        .then(async (serverResponse) => {
+          if (serverResponse.ok) {
+            const response = await serverResponse.json();
+            setCategories([...response]);
+            return;
+          }
+          throw new Error('Não foi possível pegar os dados');
+        });
 
       /*
       setTimeout(() => {
